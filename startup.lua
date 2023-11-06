@@ -81,6 +81,9 @@ function printCitizens()
     local maleCount = 0
     local femaleCount = 0
     local citizens = colony.getCitizens()
+    --local maxcitizens = colony.maxOfCitizens()
+    --local total = colony.amountOfCitizens()
+
     
     for _, v in ipairs(citizens) do
         if v.gender == "male" then
@@ -90,7 +93,7 @@ function printCitizens()
         end
     end
     
-    local headerText = "M: " .. maleCount .. " F: " .. femaleCount
+    local headerText = "M: " .. maleCount .. " F: " .. femaleCount -- .. " T: " .. total .. " / " .. maxcitizens
     centerText(headerText, mon, 1, colors.black, colors.lime, "right")
     centerText("Ville de Sidonia", mon, 1, colors.black, colors.orange, "head")
 
@@ -391,5 +394,5 @@ while true do
     printVisitors()
     printWorkOrders()
     printRequests()
-    sleep(10)
+    sleep(1)
 end
